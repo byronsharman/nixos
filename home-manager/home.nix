@@ -62,6 +62,14 @@
     SSH_AUTH_SOCK = "$XDG_RUNTIME_DIR/ssh-agent.socket";
   };
 
+  home.pointerCursor = {
+    enable = true;
+    package = pkgs.adwaita-icon-theme;
+    name = "Adwaita";
+    x11.enable = true;
+    size = 24;
+  };
+
   programs = {
     # Let Home Manager install and manage itself.
     home-manager.enable = true;
