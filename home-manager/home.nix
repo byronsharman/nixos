@@ -107,9 +107,13 @@
     };
   };
 
-  services.cliphist = {
-    enable = true;
-    extraOptions = [ "-max-items" "10" ];
+  services = {
+    cliphist = {
+      enable = true;
+      extraOptions = [ "-max-items" "10" ];
+    };
+
+    ssh-agent.enable = true;
   };
 
   xdg = {
