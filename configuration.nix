@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, inputs, ... }:
+{ lib, pkgs, inputs, ... }:
 
 {
   imports =
@@ -113,6 +113,11 @@
   #   enable = true;
   #   enableSSHSupport = true;
   # };
+
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = false;
+  };
 
   systemd.tmpfiles.rules = [
     "Z /sys/class/powercap/intel-rapl:0/energy_uj 0444 root root - -"
