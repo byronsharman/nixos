@@ -81,6 +81,8 @@
       enableGitIntegration = true;
     };
 
+    discord.enable = true;
+
     fzf = {
       enable = true;
       # enabling it manually allows me to disable Alt-C

@@ -91,6 +91,7 @@
     uv
     vim
     wl-clipboard
+    xwayland-satellite
     zip
   ];
 
