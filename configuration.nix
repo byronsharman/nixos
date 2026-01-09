@@ -2,15 +2,10 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ lib, pkgs, inputs, ... }:
+{ pkgs, ... }:
 
 {
-  imports =
-    [
-      ./hardware-configuration.nix
-      inputs.niri.nixosModules.niri
-      inputs.dms.nixosModules.greeter
-    ];
+  imports = [ ./hardware-configuration.nix ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
@@ -95,16 +90,9 @@
     zip
   ];
 
-  programs = {
-    dankMaterialShell.greeter = {
-      enable = true;
-      compositor.name = "niri";
-      # TODO: is there a way to avoid hardcoding this?
-      configHome = "/home/byron";
-    };
-    fish.enable = true;
-    niri.enable = true;
-  };
+  programs.dms-shell.enable = true;
+  programs.fish.enable = true;
+  programs.niri.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -127,6 +115,23 @@
   security.rtkit.enable = true;
 
   services = {
+    displayManager.dms-greeter = {
+      enable = true;
+      compositor = {
+        name = "niri";
+        customConfig = ''
+          cursor {
+            xcursor-theme "Adwaita"
+            xcursor-size 24
+          }
+          hotkey-overlay {
+            skip-at-startup
+          }
+        '';
+      };
+      # TODO: is there a way to avoid hardcoding this?
+      configHome = "/home/byron";
+    };
     pipewire = {
       enable = true;
       jack.enable = true;

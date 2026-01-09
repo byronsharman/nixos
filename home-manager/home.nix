@@ -1,13 +1,7 @@
-{ config, pkgs, inputs, ... }:
+{ pkgs, ... }:
 
 {
-  imports = [
-    ./nvim
-    ./fish
-    ./niri
-    inputs.dms.homeModules.dankMaterialShell.default
-    inputs.dms.homeModules.dankMaterialShell.niri
-  ];
+  imports = [ ./nvim ./fish ];
 
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -33,18 +27,7 @@
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
-  home.file = {
-    # # Building this configuration will create a copy of 'dotfiles/screenrc' in
-    # # the Nix store. Activating the configuration will then make '~/.screenrc' a
-    # # symlink to the Nix store copy.
-    # ".screenrc".source = dotfiles/screenrc;
-
-    # # You can also set the file content immediately.
-    # ".gradle/gradle.properties".text = ''
-    #   org.gradle.console=verbose
-    #   org.gradle.daemon.idletimeout=3600000
-    # '';
-  };
+  home.file = {};
 
   # Home Manager can also manage your environment variables through
   # 'home.sessionVariables'. If you don't want to manage your shell through Home
@@ -71,20 +54,12 @@
   };
 
   home.preferXdgDirectories = true;
+ 
+  xdg.configFile."niri/config.kdl".source = niri/config.kdl;
 
   programs = {
     # Let Home Manager install and manage itself.
     home-manager.enable = true;
-
-    dankMaterialShell = {
-      enable = true;
-      # I don't know when this launches dms automatically, but hopefully it
-      # does it sometime nice
-      systemd.enable = true;
-      niri = {
-        enableKeybinds = true;
-      };
-    };
 
     delta = {
       enable = true;
@@ -139,11 +114,6 @@
       };
     };
   };
-
-  # use dms polkit agent rather than the one that niri-flake ships
-  # this would be nice except it doesn't work
-  # so I guess I'm using niri's polkit thingy for now
-  # systemd.user.services.niri-flake-polkit.enable = false;
 
   services.cliphist = {
     enable = true;
