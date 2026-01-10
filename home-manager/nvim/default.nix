@@ -21,9 +21,27 @@
         plugin = nvim-lspconfig;
         config = builtins.readFile ./lspconfig.lua;
       }
-
-      # TODO: use github:iofq/nvim-treesitter-main flake for treesitter
-
+      {
+        plugin = nvim-treesitter-legacy.withAllGrammars;
+        config = ''
+          require('nvim-treesitter.configs').setup({
+            highlight = {
+              enable = true,
+              additional_vim_regex_highlighting = false,
+             },
+             incremental_selection = {
+               enable = true,
+               keymaps = {
+                 init_selection = '<CR>',
+                 scope_incremental = '<CR>',
+                 node_incremental = '<TAB>',
+                 node_decremental = '<S-TAB>',
+               },
+             },
+            indent = { enable = true },
+          })
+        '';
+      }
       {
         plugin = guess-indent-nvim;
         config = "require('guess-indent').setup{}";
