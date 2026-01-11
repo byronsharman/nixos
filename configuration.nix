@@ -73,7 +73,7 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  fonts.packages = with pkgs; [ adwaita-fonts ];
+  fonts.packages = with pkgs; [ adwaita-fonts nerd-fonts.symbols-only ];
 
   environment.pathsToLink = [ "/share/applications" "/share/xdg-desktop-portal" ];
 
