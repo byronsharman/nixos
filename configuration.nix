@@ -105,6 +105,7 @@
   programs.dms-shell.enable = true;
   programs.fish.enable = true;
   programs.niri.enable = true;
+  programs.nix-ld.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
