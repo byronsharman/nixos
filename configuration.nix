@@ -39,6 +39,16 @@
   # Set your time zone.
   time.timeZone = "America/Denver";
 
+  virtualisation = {
+    containers.enable = true;
+    podman = {
+      enable = true;
+      dockerCompat = true;
+      # required for containers under podman-compose to be able to talk to each other
+      defaultNetwork.settings.dns_enabled = true;
+    };
+  };
+
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
 
@@ -65,7 +75,11 @@
   users.users.byron = {
     isNormalUser = true;
     description = "Byron";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [
+      "networkmanager"
+      "podman"
+      "wheel"
+    ];
     packages = with pkgs; [];
     shell = pkgs.fish;
   };
