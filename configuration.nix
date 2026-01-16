@@ -117,6 +117,13 @@
     zip
   ];
 
+  programs.dsearch = {
+    enable = true;
+    systemd = {
+      enable = true;
+      target = "graphical-session.target";  # Only start in graphical sessions
+    };
+  };
   programs.dms-shell.enable = true;
   programs.fish.enable = true;
   programs.niri.enable = true;
