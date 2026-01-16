@@ -100,8 +100,9 @@
     fd
     file
     firefox
-    google-chrome
     git
+    google-chrome
+    loupe
     nautilus
     neovim
     numbat
