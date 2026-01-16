@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ lib, pkgs, ... }:
 
 {
   imports = [ ./nvim ./fish ];
@@ -22,7 +22,16 @@
   home.packages = with pkgs; [
     bat
     numbat
+    thunderbird
     typst
+
+    gnupg # required until https://github.com/NixOS/nixpkgs/issues/473387 is fixed
+    # I dunno why these are not all one package but whatever
+    sequoia-chameleon-gnupg
+    sequoia-sq
+    sequoia-sqop
+    sequoia-sqv
+    sequoia-wot
   ] ++ import ./nvim/lsp_packages.nix pkgs;
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -113,7 +122,7 @@
       enable = true;
       extraOptions = [ "-max-items" "10" ];
     };
-
+    gpg-agent.enable = true;
     ssh-agent.enable = true;
   };
 
