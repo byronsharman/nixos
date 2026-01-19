@@ -15,22 +15,6 @@ lsp_opts = {
       formatterMode = "typstyle",
     },
   },
-
-  harper_ls = {
-    settings = {
-      ["harper-ls"] = {
-        linters = {
-          LongSentences = false,
-          Matcher = false,
-          SentenceCapitalization = false,
-          Spaces = false,
-          SpellCheck = false,
-          SpelledNumbers = false,
-          ToDoHyphen = false,
-        },
-      },
-    },
-  },
 }
 
 capabilities = require('blink.cmp').get_lsp_capabilities()
