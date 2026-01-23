@@ -99,6 +99,7 @@
     btop
     fd
     file
+    file-roller
     firefox
     git
     google-chrome
