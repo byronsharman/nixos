@@ -3,7 +3,7 @@
 {
   programs.neovim = {
     enable = true;
-    extraLuaConfig = builtins.readFile ./init.lua;
+    initLua = builtins.readFile ./init.lua;
     defaultEditor = true;
     plugins = with pkgs.vimPlugins; builtins.map(attrset: { type = "lua"; } // attrset) [
       { plugin = plenary-nvim; }
