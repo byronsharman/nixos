@@ -118,10 +118,6 @@
   };
 
   services = {
-    cliphist = {
-      enable = true;
-      extraOptions = [ "-max-items" "10" ];
-    };
     gpg-agent.enable = true;
     ssh-agent.enable = true;
   };
