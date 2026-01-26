@@ -164,8 +164,11 @@
       configHome = "/home/byron";
     };
     pipewire = {
+      alsa.enable = true;
       enable = true;
       jack.enable = true;
+      pulse.enable = true;
+      wireplumber.enable = true;
     };
     power-profiles-daemon.enable = true;
     openssh.enable = true;
