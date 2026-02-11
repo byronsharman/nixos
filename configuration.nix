@@ -96,6 +96,7 @@
   environment.systemPackages = with pkgs; [
     adwaita-icon-theme
     bat
+    brightnessctl
     btop
     fd
     file
