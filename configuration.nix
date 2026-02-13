@@ -105,6 +105,7 @@
     git
     google-chrome
     loupe
+    man-pages
     nautilus
     neovim
     numbat
