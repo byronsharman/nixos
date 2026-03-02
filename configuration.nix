@@ -14,7 +14,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "snowmane"; # Define your hostname.
+  networking.hostName = "billy"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -165,6 +165,7 @@
       # TODO: is there a way to avoid hardcoding this?
       configHome = "/home/byron";
     };
+
     pipewire = {
       alsa.enable = true;
       enable = true;
@@ -172,6 +173,7 @@
       pulse.enable = true;
       wireplumber.enable = true;
     };
+
     power-profiles-daemon.enable = true;
     openssh.enable = true;
     upower.enable = true;

@@ -64,7 +64,7 @@
 
   home.preferXdgDirectories = true;
  
-  xdg.configFile."niri/config.kdl".source = niri/config.kdl;
+  # xdg.configFile."niri/config.kdl".source = niri/config.kdl;
 
   programs = {
     # Let Home Manager install and manage itself.
@@ -75,7 +75,10 @@
       enableGitIntegration = true;
     };
 
-    discord.enable = true;
+    discord = {
+      enable = true;
+      settings.SKIP_HOST_UPDATE = true;
+    };
 
     fzf = {
       enable = true;

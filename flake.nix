@@ -11,7 +11,7 @@
   };
 
   outputs = inputs@{ self, nixpkgs, home-manager, ... }: {
-    nixosConfigurations.snowmane = nixpkgs.lib.nixosSystem {
+    nixosConfigurations.billy = nixpkgs.lib.nixosSystem {
       modules = [
         ./configuration.nix
         home-manager.nixosModules.home-manager {
