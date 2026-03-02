@@ -132,6 +132,12 @@
   programs.niri.enable = true;
   programs.nix-ld.enable = true;
 
+  xdg.mime.defaultApplications = {
+    "application/pdf" = "org.gnome.Papers.desktop";
+    "image/*" = "org.gnome.Loupe.desktop";
+    "text/html" = "firefox.desktop";
+  };
+
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
