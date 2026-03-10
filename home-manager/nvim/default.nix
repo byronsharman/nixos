@@ -115,6 +115,7 @@
           }
         '';
       }
+      { plugin = typst-preview-nvim; }
     ];
   };
 }
