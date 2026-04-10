@@ -131,6 +131,7 @@
   programs.fish.enable = true;
   programs.niri.enable = true;
   programs.nix-ld.enable = true;
+  programs.steam.enable = true;
 
   xdg.mime.defaultApplications = {
     "application/pdf" = "org.gnome.Papers.desktop";

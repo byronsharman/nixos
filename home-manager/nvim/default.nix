@@ -5,6 +5,9 @@
     enable = true;
     initLua = builtins.readFile ./init.lua;
     defaultEditor = true;
+    withRuby = false;
+    withPython3 = true;
+
     plugins = with pkgs.vimPlugins; builtins.map(attrset: { type = "lua"; } // attrset) [
       { plugin = plenary-nvim; }
       { plugin = lush-nvim; }
