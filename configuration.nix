@@ -120,6 +120,29 @@
     zip
   ];
 
+  environment.gnome.excludePackages = (with pkgs; [
+    cheese
+    epiphany
+    geary
+    gnome-calendar
+    gnome-characters
+    gnome-connections
+    gnome-contacts
+    gnome-disk-utility
+    gnome-font-viewer
+    gnome-logs
+    gnome-maps
+    gnome-music
+    gnome-photos
+    gnome-tour
+    gnome-weather
+    seahorse
+    simple-scan
+    snapshot
+    totem
+    yelp
+  ]);
+
   programs.dsearch = {
     enable = true;
     systemd = {
@@ -155,23 +178,34 @@
   security.rtkit.enable = true;
 
   services = {
-    displayManager.dms-greeter = {
+    desktopManager.gnome.enable = true;
+    displayManager.gdm.enable = true;
+
+    # displayManager.dms-greeter = {
+    #   enable = true;
+    #   compositor = {
+    #     name = "niri";
+    #     customConfig = ''
+    #       cursor {
+    #         xcursor-theme "Adwaita"
+    #         xcursor-size 24
+    #       }
+    #       hotkey-overlay {
+    #         skip-at-startup
+    #       }
+    #     '';
+    #   };
+    #   # TODO: is there a way to avoid hardcoding this?
+    #   configHome = "/home/byron";
+    # };
+
+
+    mullvad-vpn = {
       enable = true;
-      compositor = {
-        name = "niri";
-        customConfig = ''
-          cursor {
-            xcursor-theme "Adwaita"
-            xcursor-size 24
-          }
-          hotkey-overlay {
-            skip-at-startup
-          }
-        '';
-      };
-      # TODO: is there a way to avoid hardcoding this?
-      configHome = "/home/byron";
+      package = pkgs.mullvad-vpn;
     };
+
+    openssh.enable = true;
 
     pipewire = {
       alsa.enable = true;
@@ -182,8 +216,8 @@
     };
 
     power-profiles-daemon.enable = true;
-    openssh.enable = true;
     upower.enable = true;
+    resolved.enable = true;
   };
 
   # Open ports in the firewall.
