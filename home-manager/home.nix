@@ -64,6 +64,8 @@
     # Let Home Manager install and manage itself.
     home-manager.enable = true;
 
+    codex.enable = true;
+
     delta = {
       enable = true;
       enableGitIntegration = true;
