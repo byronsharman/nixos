@@ -98,8 +98,14 @@
 
     mpv = {
       enable = true;
-      config.hwdec = "auto";
-      config.screenshot-format = "png";
+      config = {
+        hwdec = "auto";
+        screenshot-format = "png";
+        vo="gpu-next";
+
+        scale = "ewa_lanczossharp";
+        cscale = "ewa_lanczossharp";
+      };
     };
 
     ssh = {
