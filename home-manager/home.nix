@@ -96,6 +96,12 @@
       };
     };
 
+    mpv = {
+      enable = true;
+      config.hwdec = "auto";
+      config.screenshot-format = "png";
+    };
+
     ssh = {
       enable = true;
       # disable deprecated default config
