@@ -103,6 +103,7 @@
         screenshot-format = "png";
         vo="gpu-next";
 
+        fs = "yes";
         scale = "ewa_lanczossharp";
         cscale = "ewa_lanczossharp";
       };
