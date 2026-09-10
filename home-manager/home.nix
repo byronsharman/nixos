@@ -1,4 +1,4 @@
-{ lib, pkgs, ... }:
+{ pkgs, osConfig, ... }:
 
 {
   imports = [ ./nvim ./fish ];
@@ -57,6 +57,14 @@
   };
 
   home.preferXdgDirectories = true;
+
+  xdg.mimeApps = {
+    enable = true;
+    # Some apps (e.g. Discord) are nasty and don't respect the system-wide xdg
+    # default applications. However, they do seem to see them if set at the
+    # user level, which we do here.
+    defaultApplications = osConfig.xdg.mime.defaultApplications;
+  };
  
   xdg.configFile."niri/config.kdl".source = niri/config.kdl;
 
