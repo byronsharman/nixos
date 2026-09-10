@@ -4,6 +4,7 @@ lsp_opts = {
   },
   gleam = {},
   gopls = {},
+  ocamllsp = {},
   nil_ls = {},
   pyright = {},
   ruff = {},
