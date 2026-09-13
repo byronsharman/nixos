@@ -21,6 +21,7 @@
   # environment.
   home.packages = with pkgs; [
     bat
+    hayagriva
     numbat
     qbittorrent
     typst
