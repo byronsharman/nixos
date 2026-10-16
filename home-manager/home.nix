@@ -21,6 +21,7 @@
   # environment.
   home.packages = with pkgs; [
     bat
+    claude-code
     hayagriva
     numbat
     qbittorrent
