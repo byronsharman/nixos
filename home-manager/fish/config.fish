@@ -46,6 +46,9 @@ function fish_prompt --description 'Write out the prompt'
         end
         set suffix '#'
     end
+    if test -n "$IN_NIX_SHELL"
+        set suffix " $suffix"
+    end
 
     # Color the prompt in red on error
     if test $last_status -ne 0

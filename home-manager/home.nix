@@ -81,6 +81,13 @@
       enableGitIntegration = true;
     };
 
+    direnv = {
+      enable = true;
+      enableFishIntegration = true;
+      silent = true;
+      nix-direnv.enable = true;
+    };
+
     discord = {
       enable = true;
       settings.SKIP_HOST_UPDATE = true;
