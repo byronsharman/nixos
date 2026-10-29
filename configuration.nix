@@ -149,7 +149,7 @@
       target = "graphical-session.target";  # Only start in graphical sessions
     };
   };
-  programs.dms-shell.enable = true;
+  programs.dux-shell.enable = true;
   programs.fish.enable = true;
   programs.niri.enable = true;
   programs.nix-ld.enable = true;
@@ -180,25 +180,6 @@
   services = {
     desktopManager.gnome.enable = true;
     displayManager.gdm.enable = true;
-
-    # displayManager.dms-greeter = {
-    #   enable = true;
-    #   compositor = {
-    #     name = "niri";
-    #     customConfig = ''
-    #       cursor {
-    #         xcursor-theme "Adwaita"
-    #         xcursor-size 24
-    #       }
-    #       hotkey-overlay {
-    #         skip-at-startup
-    #       }
-    #     '';
-    #   };
-    #   # TODO: is there a way to avoid hardcoding this?
-    #   configHome = "/home/byron";
-    # };
-
 
     mullvad-vpn = {
       enable = true;
