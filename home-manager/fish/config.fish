@@ -21,10 +21,9 @@ function jmp
   set -e jmptarget
 end
 
+set -gx LEDGER_FILE ./hledger.journal
+
 set PATH $PATH /home/byron/.cargo/bin /home/byron/.go/bin
-
-
-
 
 # modified astronaut prompt
 function fish_prompt --description 'Write out the prompt'
