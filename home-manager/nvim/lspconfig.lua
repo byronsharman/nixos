@@ -14,6 +14,8 @@ lsp_opts = {
   tinymist = {
     settings = {
       formatterMode = "typstyle",
+      formatterPrintWidth = 79,
+      formatterProseWrap = "fill",
     },
   },
 }
