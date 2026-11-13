@@ -118,7 +118,12 @@
           }
         '';
       }
-      { plugin = typst-preview-nvim; }
+      {
+        plugin = typst-preview-nvim;
+        config = ''
+          require('typst-preview').setup{ invert_colors = 'auto' }
+        '';
+      }
     ];
   };
 }
